@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/FrontEndLaba2/static/css/main.e6c13ad2.css",
+    "main.js": "/FrontEndLaba2/static/js/main.06286f3c.js",
+    "static/media/promo_background.png": "/FrontEndLaba2/static/media/promo_background.2a94ae41702c5b5c94ef.png",
+    "index.html": "/FrontEndLaba2/index.html",
+    "main.e6c13ad2.css.map": "/FrontEndLaba2/static/css/main.e6c13ad2.css.map",
+    "main.06286f3c.js.map": "/FrontEndLaba2/static/js/main.06286f3c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.06286f3c.js"
+  ]
+}
