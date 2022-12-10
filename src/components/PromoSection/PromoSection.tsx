@@ -17,10 +17,17 @@ export function PromoSection() {
                 justifyContent: 'center',
                 alignItems: 'center',
             }}>
-            <Container maxWidth="sm">
-                <TitleComponent/>
-                <ButtonComponent/>
+            <Container
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}>
+                <TitleComponent title="Кинорежиссёры Беларуси"/>
+                <ButtonComponent text="Перейти к поиску"/>
             </Container>
         </Paper>
     );
 }
+export default PromoSection;
