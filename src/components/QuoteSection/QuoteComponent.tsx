@@ -20,6 +20,9 @@ export function QuoteComponent(props: QuoteComponentProps) {
                     width: '0px',
                     position: 'relative',
                     left: '80px',
+                    [theme.breakpoints.down('lg')]: {
+                        display: 'none',
+                    }
                 }}>
                 “
             </Typography>
