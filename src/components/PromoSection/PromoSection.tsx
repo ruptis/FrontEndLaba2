@@ -1,5 +1,5 @@
 import {Container, Paper} from "@mui/material";
-import background from "../../assets/images/promo_background.png";
+import background from "../../assets/images/promoBackground.png";
 import TitleComponent from "./TitleComponent";
 import ButtonComponent from "./ButtonComponent";
 

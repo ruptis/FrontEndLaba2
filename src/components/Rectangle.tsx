@@ -6,28 +6,36 @@ interface PromoSectionProps {
     color?: string;
     width?: string;
     height?: string;
+    blur: boolean;
+    direction?: 'row' | 'column';
+    align?: 'center' | 'start' | 'end';
+    justify?: 'center' | 'start' | 'end' | 'space-between' | 'space-around';
+    margin?: string;
+    padding?: string;
+
 }
-export function Rectangle(props: PromoSectionProps) {
+export function Rectangle({children, color, width, height, blur = false, direction = 'column', align = 'center', justify = 'center', margin = '0px', padding = '0px'}: PromoSectionProps) {
     return (
         <Paper
             sx={{
-                backgroundColor: props.color,
-                width: props.width,
-                height: props.height,
+                backgroundColor: color,
+                height: height,
+                width: { lg: width, sm: '90vw'},
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
+                flexDirection: direction,
+                alignItems: align,
+                justifyContent: justify,
                 boxSizing: 'border-box',
-                borderRadius: '66px',
-                backdropFilter: `blur(10px)`,
-                WebkitBackdropFilter: `blur(10px)`,
+                borderRadius: { lg: '66px', md: '50px'},
                 boxShadow: '0px 3px 12px rgba(0, 0, 0, 0.12)',
                 border: '1px solid rgba(255, 255, 255, 0.12)',
-                margin: '50px',
+                margin: margin,
+                padding: padding,
                 textAlign: 'center',
+                backdropFilter: blur ? `blur(10px)` : `none`,
+                WebkitBackdropFilter: blur ? `blur(10px)` : `none`,
             }}>
-            {props.children}
+            {children}
         </Paper>
     );
 }

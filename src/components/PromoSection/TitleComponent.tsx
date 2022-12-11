@@ -1,37 +1,23 @@
-import DividerImage from '../../assets/images/titlecomponent_movieDivider5.png';
-import {Typography, useTheme} from "@mui/material";
+import {Typography} from "@mui/material";
 import {Rectangle} from "../Rectangle";
+import MovieDivider from "../MovieDivider";
 
 interface TitleComponentProps {
     title: string;
 }
  
 export function TitleComponent(props: TitleComponentProps) {
-    const theme = useTheme();
-
     return (
-        <Rectangle color={theme.palette.background.paper} width="821px" height="329px">
+        <Rectangle color={'rgba(131,80,79,0.55)'} width="821px" height="329px" blur={true} direction={'column'} align={'center'} margin={'50px'}>
             <Typography
                 sx={{
-                    fontSize: '85px',
+                    fontSize: { lg: '85px', xs: '50px' },
                     fontWeight: 'bold',
                     color: 'primary.contrastText',
-                    [theme.breakpoints.down('md')]: {
-                        fontSize: '30px',
-                    },
-                }}
-            >
+                }}>
                 {props.title}
             </Typography>
-            <img src={DividerImage} alt="divider"
-                style={{
-                    width: '80%',
-                    height: '21px',
-                    [theme.breakpoints.down('md')]: {
-                        width: '100%',
-                        height: '11px',
-                    },
-                }}/>
+            <MovieDivider/>
         </Rectangle>
     );
 }
