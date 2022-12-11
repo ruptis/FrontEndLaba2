@@ -1,4 +1,4 @@
-import DividerImage from '../../assets/images/titlecomponent_movieDivider5.png';
+import DividerImage from '../../assets/images/movieDivider.png';
 import {Typography, useTheme} from "@mui/material";
 import {Rectangle} from "../Rectangle";
 
