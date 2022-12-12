@@ -1,4 +1,4 @@
-import {Paper} from "@mui/material";
+import {Paper, useTheme} from "@mui/material";
 import {ReactNode} from "react";
 
 interface PromoSectionProps {
@@ -6,28 +6,40 @@ interface PromoSectionProps {
     color?: string;
     width?: string;
     height?: string;
+    blur: boolean;
+    direction?: 'row' | 'column' | 'row-column';
+    align?: 'center' | 'start' | 'end';
+    justify?: 'center' | 'start' | 'end' | 'space-between' | 'space-around';
+    margin?: string;
+    padding?: string;
+
 }
-export function Rectangle(props: PromoSectionProps) {
+export function Rectangle({children, color, width, height, blur = false, direction = 'column', align = 'center', justify = 'center', margin = '0px', padding = '0px'}: PromoSectionProps) {
+    const theme = useTheme();
     return (
         <Paper
             sx={{
-                backgroundColor: props.color,
-                width: props.width,
-                height: props.height,
+                backgroundColor: color,
+                height: height,
+                width: { lg: width, sm: '90vw'},
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
+                flexDirection: direction === 'row-column' ? 'row' : direction,
+                alignItems: align,
+                justifyContent: justify,
                 boxSizing: 'border-box',
-                borderRadius: '66px',
-                backdropFilter: `blur(10px)`,
-                WebkitBackdropFilter: `blur(10px)`,
+                borderRadius: { lg: '66px', md: '50px', sm: '30px'},
                 boxShadow: '0px 3px 12px rgba(0, 0, 0, 0.12)',
                 border: '1px solid rgba(255, 255, 255, 0.12)',
-                margin: '50px',
+                margin: margin,
+                padding: padding,
                 textAlign: 'center',
+                backdropFilter: blur ? `blur(10px)` : `none`,
+                WebkitBackdropFilter: blur ? `blur(10px)` : `none`,
+                [theme.breakpoints.down('md')]: {
+                    flexDirection: direction === 'row-column' ? 'column' : direction,
+                },
             }}>
-            {props.children}
+            {children}
         </Paper>
     );
 }

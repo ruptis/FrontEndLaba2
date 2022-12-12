@@ -10,8 +10,8 @@ function ButtonComponent(props: ButtonComponentProps) {
     return (
         <Button
             sx={{
-                backgroundColor: 'primary.main',
-                color: 'primary.contrastText',
+                backgroundColor: 'text.secondary',
+                color: 'text.primary',
                 borderRadius: '20px',
                 width: '330px',
                 height: '80px',

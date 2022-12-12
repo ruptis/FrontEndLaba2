@@ -12,7 +12,7 @@ function App() {
             <CssBaseline />
             <Header />
             <Routes>
-                <Route path="/" element={<MainPage />} />
+                <Route path="FrontEndLaba2/" element={<MainPage />} />
             </Routes>
           </ThemeProvider>
       </>
