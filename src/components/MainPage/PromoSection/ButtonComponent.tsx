@@ -1,4 +1,5 @@
 import {Button} from "@mui/material";
+import {Trans} from "react-i18next";
 
 interface ButtonComponentProps {
     text: string;
@@ -26,7 +27,7 @@ function ButtonComponent(props: ButtonComponentProps) {
             onClick={props.onClick}
             href={props.href}
         >
-            {props.text}
+            <Trans>{props.text}</Trans>
         </Button>
     );
 }

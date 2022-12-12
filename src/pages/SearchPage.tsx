@@ -6,8 +6,10 @@ import {SearchResult} from "../components/SearchPage/SearchResult";
 import {directors} from "../assets/data/directors";
 import {useEffect, useState} from "react";
 import IDirector from "../models";
+import {useTranslation} from "react-i18next";
 
 export function SearchPage() {
+    const { t } = useTranslation('search');
     const [searchValue, setSearchValue] = useState<string>('');
     const [filteredAuthors, setFilteredAuthors] = useState<IDirector[]>(directors);
 
@@ -25,7 +27,7 @@ export function SearchPage() {
                         alignItems: 'center',
                     }
                 }>
-                    <SearchBar placeholder="Поиск по имени" onChange={setSearchValue}/>
+                    <SearchBar placeholder={t('placeholder')} onChange={setSearchValue}/>
                     {filteredAuthors.map(director => <SearchResult director={director}/>)}
                 </Container>
             </div>

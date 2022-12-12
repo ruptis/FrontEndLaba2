@@ -1,6 +1,7 @@
 import {Typography} from "@mui/material";
 import {Rectangle} from "../../Rectangle";
 import MovieDivider from "../../MovieDivider";
+import {Trans} from "react-i18next";
 
 interface TitleComponentProps {
     title: string;
@@ -15,7 +16,7 @@ export function TitleComponent(props: TitleComponentProps) {
                     fontWeight: 'bold',
                     color: 'primary.contrastText',
                 }}>
-                {props.title}
+                <Trans>{props.title}</Trans>
             </Typography>
             <MovieDivider/>
         </Rectangle>

@@ -1,0 +1,19 @@
+{
+  "header": {
+    "home": "Home",
+    "info": "Info",
+    "author": "Author",
+    "search": "Search"
+  },
+  "promo": {
+    "title": "Filmmakers of Belarus",
+    "button": "Go to search"
+  },
+  "about": {
+    "title": "About the portal",
+    "text": "Filmmakers of Belarus is a portal dedicated to filmmakers of Belarus. Here you can find information about the filmmakers, their films, as well as the films they made."
+  },
+  "search": {
+    "placeholder": "Search by name"
+  }
+}

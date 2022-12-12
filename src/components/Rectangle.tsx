@@ -38,6 +38,11 @@ export function Rectangle({children, color, width, height, blur = false, directi
                 [theme.breakpoints.down('md')]: {
                     flexDirection: direction === 'row-column' ? 'column' : direction,
                 },
+                [theme.breakpoints.down('sm')]: {
+                    flexDirection: direction === 'row-column' ? 'column' : direction,
+                    height: 'auto',
+                    padding: '30px 0px',
+                }
             }}>
             {children}
         </Paper>

@@ -1,6 +1,7 @@
 import {Rectangle} from "../../Rectangle";
 import {Typography, useTheme} from "@mui/material";
 import MovieDivider from "../../MovieDivider";
+import {Trans} from "react-i18next";
 
 interface QuoteComponentProps {
     quote: string;
@@ -48,7 +49,7 @@ export function QuoteComponent(props: QuoteComponentProps) {
                         color: 'primary.contrastText',
                         textAlign: 'left',
                     }}>
-                        {props.quote}
+                        <Trans>{props.quote}</Trans>
                     </Typography>
                     <Typography sx={{
                         fontSize: '15px',
@@ -56,7 +57,7 @@ export function QuoteComponent(props: QuoteComponentProps) {
                         color: 'primary.contrastText',
                         textAlign: 'right',
                     }}>
-                        {props.author}
+                        <Trans>{props.author}</Trans>
                     </Typography>
                 </div>
                 <MovieDivider/>

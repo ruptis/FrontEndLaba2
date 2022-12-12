@@ -1,10 +1,12 @@
+import {Rectangle} from "../Rectangle";
 import {Typography, useTheme} from "@mui/material";
-import {Rectangle} from "../../Rectangle";
 import Box from "@mui/material/Box";
-import MovieDivider from "../../MovieDivider";
+import OrnItem from "../../assets/images/ornItem.svg";
+import MovieDivider from "../MovieDivider";
 import IconButton from "@mui/material/IconButton";
-import {ArrowCircleRightOutlined} from "@mui/icons-material";
-import IDirector from "../../../models";
+import {ArrowBackIosNewOutlined, ArrowForwardIosOutlined} from "@mui/icons-material";
+import IDirector from "../../models";
+import directors from "../../assets/data/directors";
 
 interface DirectorComponentProps {
     director: IDirector;
@@ -12,26 +14,46 @@ interface DirectorComponentProps {
 export function DirectorComponent(props: DirectorComponentProps) {
     const theme = useTheme();
 
+    function getNextDirector() {
+        let index = directors.indexOf(props.director);
+        if (index === directors.length - 1) {
+            return directors[0];
+        }
+        return directors[index + 1];
+    }
+
+    function getPreviousDirector() {
+        let index = directors.indexOf(props.director);
+        if (index === 0) {
+            return directors[directors.length - 1];
+        }
+        return directors[index - 1];
+    }
+
     return (
         <Rectangle color={theme.palette.background.default} width="1300px" height="700px" blur={false} direction={'row-column'} align={'center'} justify={'space-around'} margin={'50px'} padding={'40px'}>
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
+                alignItems: 'center',
                 flexGrow: 1,
                 width: '80%',
                 height: '100%',
             }}>
                 <Box sx={{
                     marginBottom: '50px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
                 }}>
                     <Typography sx={{
                         fontSize: '66px',
                         fontWeight: 'bold',
                         color: 'primary.contrastText',
-                        textAlign: 'left',
+                        textAlign: 'center',
                         lineHeight: '1.1',
-                        marginBottom: '10px',
                         [theme.breakpoints.down('lg')]: {
                             fontSize: '50px',
                         },
@@ -49,30 +71,31 @@ export function DirectorComponent(props: DirectorComponentProps) {
                         fontWeight: 'bold',
                         color: 'primary.contrastText',
                         textAlign: 'left',
+                        margin: '80px 0px 0px 0px',
                     }}>
                         {props.director.birthDate}-{props.director.deathDate}
                     </Typography>
                 </Box>
-                <Typography sx={{
-                    fontSize: '32px',
-                    fontWeight: 'bold',
-                    color: 'primary.contrastText',
-                    textAlign: 'center',
-                    flexGrow: 1,
-                    [theme.breakpoints.down('lg')]: {
-                        fontSize: '26px',
-                    },
+                <Box sx={{
+                    width: '266px',
+                    height: '266px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    position: 'relative',
+                    marginTop: '50px',
                     [theme.breakpoints.down('md')]: {
-                        display: 'none',
-                    },
-                    [theme.breakpoints.down('sm')]: {
                         display: 'none',
                     }
                 }}>
-                    {props.director.biography}
-                </Typography>
+                    <img src={OrnItem} alt="ornItem" style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                    }}/>
+                </Box>
             </Box>
-            <MovieDivider vertical={true}/>
+            <MovieDivider vertical={true} />
             <Box sx={
                 {
                     flexBasis: '30%',
@@ -106,7 +129,14 @@ export function DirectorComponent(props: DirectorComponentProps) {
                         borderRadius: '33px',
                     }}/>
                 </Box>
-                <IconButton href={'/FrontEndLaba2/director/' + props.director.pathUrl}
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    width: '100%',
+                    height: '100%',
+                }}>
+                    <IconButton href={'/FrontEndLaba2/director/' + getPreviousDirector().pathUrl}
                         sx={{
                             width: '100px',
                             height: '100px',
@@ -114,18 +144,39 @@ export function DirectorComponent(props: DirectorComponentProps) {
                                 width: '150px',
                                 height: '150px',
                             }
-                }}>
-                    <ArrowCircleRightOutlined sx={
-                        {
-                            color: 'primary.contrastText',
-                            fontSize: '100px',
-                            [theme.breakpoints.down('md')]: {
-                                fontSize: '150px',
+                    }}>
+                        <ArrowBackIosNewOutlined sx={
+                            {
+                                color: 'primary.contrastText',
+                                fontSize: '100px',
+                                [theme.breakpoints.down('md')]: {
+                                    fontSize: '150px',
+                                }
                             }
-                        }
-                    }/>
-                </IconButton>
+                        }/>
+                    </IconButton>
+                    <IconButton href={'/FrontEndLaba2/director/' + getNextDirector().pathUrl}
+                        sx={{
+                            width: '100px',
+                            height: '100px',
+                            [theme.breakpoints.down('md')]: {
+                                width: '150px',
+                                height: '150px',
+                            }
+                    }}>
+                        <ArrowForwardIosOutlined sx={
+                            {
+                                color: 'primary.contrastText',
+                                fontSize: '100px',
+                                [theme.breakpoints.down('md')]: {
+                                    fontSize: '150px',
+                                }
+                            }
+                        }/>
+                    </IconButton>
+                </Box>
             </Box>
         </Rectangle>
     );
 }
+export default DirectorComponent;
