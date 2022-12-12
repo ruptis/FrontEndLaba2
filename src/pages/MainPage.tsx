@@ -1,9 +1,9 @@
-import PromoSection from "../components/PromoSection/PromoSection";
-import QuoteSection from "../components/QuoteSection/QuoteSection";
+import PromoSection from "../components/MainPage/PromoSection/PromoSection";
+import QuoteSection from "../components/MainPage/QuoteSection/QuoteSection";
 import {Background} from "../components/Background";
-import background from "../assets/images/background.png";
-import AboutSection from "../components/AboutSection/AboutSection";
-import {DirectorSection} from "../components/DirectorSection/DirectorSection";
+import background from "../assets/images/background.svg";
+import AboutSection from "../components/MainPage/AboutSection/AboutSection";
+import {DirectorSection} from "../components/MainPage/DirectorSection/DirectorSection";
 
 export function MainPage() {
     return (

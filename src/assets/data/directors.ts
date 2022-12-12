@@ -1,8 +1,8 @@
-import {IAuthor} from "../../models";
+import {IDirector} from "../../models";
 import mainImage1 from "../../assets/images/authors/directorImage.png";
 import image1 from "../../assets/images/authors/image.png";
 
-export const authors: IAuthor[] = [
+export const directors: IDirector[] = [
     {
         name: 'Лукашевич Олег Вацлавович',
         birthDate: '27 марта 1972 (50 лет)',
@@ -29,7 +29,8 @@ export const authors: IAuthor[] = [
                 title: 'Заголовок',
                 description: 'Текст описания'
             }
-        ]
+        ],
+        pathUrl: 'lukashevich'
     },
 ]
-export const authorsMap = new Map<string, IAuthor>();
+export const directorsMap = new Map<string, IDirector>();

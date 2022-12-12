@@ -1,5 +1,5 @@
 import {Container, Paper} from "@mui/material";
-import background from "../../assets/images/promoBackground.png";
+import background from "../../../assets/images/promoBackground.svg";
 import TitleComponent from "./TitleComponent";
 import ButtonComponent from "./ButtonComponent";
 
@@ -25,7 +25,7 @@ export function PromoSection() {
                     alignItems: 'center',
                 }}>
                 <TitleComponent title="Кинорежиссёры Беларуси"/>
-                <ButtonComponent text="Перейти к поиску"/>
+                <ButtonComponent text="Перейти к поиску" href={'/FrontEndLaba2/search'}/>
             </Container>
         </Paper>
     );

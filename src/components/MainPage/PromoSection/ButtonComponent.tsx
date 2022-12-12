@@ -3,6 +3,7 @@ import {Button} from "@mui/material";
 interface ButtonComponentProps {
     text: string;
     onClick?: () => void;
+    href?: string;
 }
 
 function ButtonComponent(props: ButtonComponentProps) {
@@ -23,6 +24,7 @@ function ButtonComponent(props: ButtonComponentProps) {
             }}
             variant="contained"
             onClick={props.onClick}
+            href={props.href}
         >
             {props.text}
         </Button>

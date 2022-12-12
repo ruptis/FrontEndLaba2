@@ -15,6 +15,7 @@ import {useState} from "react";
 
 const drawerWidth = 240;
 const navItems = ['Главная', 'Инфо', 'Автор дня', 'Поиск'];
+const navLinks = ['/FrontEndLaba2/', '/FrontEndLaba2/#info', '/FrontEndLaba2/#author', '/FrontEndLaba2/search'];
 
 export default function DrawerAppBar(props: any) {
     const {window} = props;
@@ -66,9 +67,9 @@ export default function DrawerAppBar(props: any) {
                     </Typography>
                     <Box sx={{display: {xs: 'none', sm: 'block'}}}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{color: '#fff'}}>
-                                {item}
-                            </Button>
+                        <Button key={item} sx={{color: 'primary.contrastText', mx: 1}} href={navLinks[navItems.indexOf(item)]}>
+                            {item}
+                        </Button>
                         ))}
                     </Box>
                 </Toolbar>

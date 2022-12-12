@@ -1,4 +1,4 @@
-import AboutImage from "../../assets/images/aboutImage.png"
+import AboutImage from "../../../assets/images/aboutImage.png"
 import {AboutComponent} from "./AboutComponent";
 import {useTheme} from "@mui/material";
 import Box from "@mui/material/Box";
@@ -7,7 +7,7 @@ export function AboutSection() {
         const theme = useTheme();
 
         return (
-            <Box
+            <Box id={"info"}
                 sx={{
                     display: 'flex',
                     flexDirection: 'row',

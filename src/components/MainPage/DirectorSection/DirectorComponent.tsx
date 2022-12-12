@@ -1,7 +1,7 @@
 import {Typography, useTheme} from "@mui/material";
-import {Rectangle} from "../Rectangle";
+import {Rectangle} from "../../Rectangle";
 import Box from "@mui/material/Box";
-import MovieDivider from "../MovieDivider";
+import MovieDivider from "../../MovieDivider";
 import IconButton from "@mui/material/IconButton";
 import {ArrowCircleRightOutlined} from "@mui/icons-material";
 
@@ -35,6 +35,15 @@ export function DirectorComponent(props: DirectorComponentProps) {
                         textAlign: 'left',
                         lineHeight: '1.1',
                         marginBottom: '10px',
+                        [theme.breakpoints.down('lg')]: {
+                            fontSize: '50px',
+                        },
+                        [theme.breakpoints.down('md')]: {
+                            fontSize: '40px',
+                        },
+                        [theme.breakpoints.down('sm')]: {
+                            fontSize: '30px',
+                        }
                     }}>
                         {props.name}
                     </Typography>

@@ -1,6 +1,6 @@
-import {Rectangle} from "../Rectangle";
+import {Rectangle} from "../../Rectangle";
 import {Typography, useTheme} from "@mui/material";
-import MovieDivider from "../MovieDivider";
+import MovieDivider from "../../MovieDivider";
 
 interface AboutComponentProps {
     title: string;
