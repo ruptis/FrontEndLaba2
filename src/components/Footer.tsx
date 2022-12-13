@@ -44,7 +44,7 @@ function Authorinfo(props: any)
         font: fontStyle, 
         fontWeight: "bolder",
         fontSize: '1.2em',
-        textAling: 'center'
+        textAlign: 'center'
     };
 
     return (
@@ -53,7 +53,7 @@ function Authorinfo(props: any)
         {props.name}
  
         <IconButton color="secondary" aria-label='To git' href={props.href} >
-            <GitHubIcon sx={{fontSize: '100px'}} />
+            <GitHubIcon sx={{fontSize: '100px', textAlign: 'center'}} />
         </IconButton>
         
     </Box>
@@ -63,16 +63,13 @@ function Authorinfo(props: any)
 function FooterButtons(props: any)
 {
     const MyButton = styled(ButtonBase)(props, ({ theme }) => ({
-        position: "relative",
+        position: "absolute",
         left: props.posx + 'px',
         font: fontStyle, 
         fontWeight: "bolder",
         fontSize: '1.2em',
         [theme.breakpoints.down("sm")]: 
-        {   
-            width: "100% !important", // Overrides inline-style
-            height: 100
-        },
+        {},
         "&:hover, &.Mui-focusVisible": 
         {
             fontWeight: "bolder",
