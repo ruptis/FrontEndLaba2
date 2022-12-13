@@ -115,6 +115,16 @@ export const directors: IDirector[] = [
                 year: 2000,
                 title: 'Заголовок',
                 description: 'Текст описания'
+            },
+            {
+                year: 2001,
+                title: 'Заголовок',
+                description: 'Текст описания'
+            },
+            {
+                year: 2002,
+                title: 'Заголовок',
+                description: 'Текст описания'
             }
         ],
         pathUrl: 'aleksandr'
