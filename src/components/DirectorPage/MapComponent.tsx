@@ -15,7 +15,7 @@ function MapComponent(props : any) {
   }
 
   return (
-    <MapContainer style={mapSize} center={[53.7169, 27.9776]} zoom={8}>
+    <MapContainer style={mapSize} center={[props.x, props.y]} zoom={10}>
       <MyComponent />
       <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
