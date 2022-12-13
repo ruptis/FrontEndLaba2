@@ -26,11 +26,7 @@
     "react-router": "^6.4.5",
     "react-router-dom": "^6.4.5",
     "react-scripts": "^5.0.1",
-    "react-swipeable-views": "^0.14.0",
-    "react-swipeable-views-utils": "^0.14.0",
     "react-text": "^3.2.5",
-    "react-video": "^1.5.3",
-    "react-youtube": "^10.1.0",
     "typescript": "^4.9.3",
     "web-vitals": "^2.1.4"
   },
@@ -61,6 +57,10 @@
     ]
   },
   "devDependencies": {
+    "react-swipeable-views": "^0.14.0",
+    "react-swipeable-views-utils": "^0.14.0",
+    "react-video": "^1.5.3",
+    "react-youtube": "^10.1.0",
     "@types/leaflet": "^1.9.0",
     "@types/react-swipeable-views-utils": "^0.13.4",
     "gh-pages": "^4.0.0"

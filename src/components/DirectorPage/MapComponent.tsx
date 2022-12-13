@@ -1,4 +1,3 @@
-import { MapContainer, TileLayer } from 'react-leaflet'
 import {Rectangle} from "../Rectangle";
 import { MapContainer, TileLayer } from 'react-leaflet'
 

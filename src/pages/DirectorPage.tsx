@@ -15,8 +15,8 @@ export function DirectorPage(props: DirectorPageProps) {
         <Background background={background}>
             <DirectorComponent director={props.director}/>
             <TimelineComponent timeline={props.director.timeline}/>
-            <VideoComponent width='1080' height = '768' videoId='RYDIExW5c9A'/>
             <CarouselComponent images={props.director.images}/>
+            <VideoComponent videoId={props.director.videoEmbedId}/>
             <MapComponent lat={props.director.location.lat} lng={props.director.location.lng}/>
         </Background>
     );
