@@ -10,6 +10,7 @@ export function DirectorPage(props: DirectorPageProps) {
     return (
         <Background background={background}>
             <DirectorComponent director={props.director}/>
+
         </Background>
     );
 }

@@ -15,9 +15,9 @@ function App() {
             <CssBaseline />
             <Header />
             <Routes>
-                <Route path="FrontEndLaba2/" element={<MainPage />} />
-                <Route path="FrontEndLaba2/search" element={<SearchPage />} />
-                {directors.map(director => <Route path={`FrontEndLaba2/director/${director.pathUrl}`} element={<DirectorPage director={director} />} />)}
+                <Route path="/" element={<MainPage />} />
+                <Route path="/search" element={<SearchPage />} />
+                {directors.map(director => <Route path={`/director/${director.pathUrl}`} element={<DirectorPage director={director} />} />)}
             </Routes>
           </ThemeProvider>
       </>
