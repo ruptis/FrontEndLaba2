@@ -106,7 +106,7 @@ export function DirectorComponent(props: DirectorComponentProps) {
                         borderRadius: '33px',
                     }}/>
                 </Box>
-                <IconButton href={'/FrontEndLaba2/director/' + props.director.pathUrl}
+                <IconButton href={'/frontendlaba2/director/' + props.director.pathUrl}
                         sx={{
                             width: '100px',
                             height: '100px',

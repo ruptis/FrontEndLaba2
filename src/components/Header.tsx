@@ -20,11 +20,11 @@ import {ButtonGroup} from "@mui/material";
 const drawerWidth = 240;
 // const navItems = ['Главная', 'Инфо', 'Автор дня', 'Поиск'];
 const navItems = ['home', 'info', 'author', 'search'];
-const navLinks = ['/FrontEndLaba2/', '/FrontEndLaba2/#info', '/FrontEndLaba2/#author', '/FrontEndLaba2/search'];
+const navLinks = ['/frontendlaba2/', '/frontendlaba2/#info', '/frontendlaba2/#author', '/frontendlaba2/search'];
 
 export default function DrawerAppBar(props: any) {
     const { t, i18n } = useTranslation('header')
-    const [language, setLanguage] = useState<string>('ru');
+    const [language, setLanguage] = useState<string>(i18n.language);
     const {window} = props;
     const [mobileOpen, setMobileOpen] = useState(false);
 

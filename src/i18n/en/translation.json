@@ -15,5 +15,12 @@
   },
   "search": {
     "placeholder": "Search by name"
+  },
+  "footer": {
+    "author1": "Pavel Patiyuk",
+    "author2": "Andrei Klimovich",
+    "author3": "Mikhail Barilko",
+    "search": "Go to search",
+    "home": "Go to home"
   }
 }

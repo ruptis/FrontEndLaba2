@@ -28,7 +28,7 @@ export function PromoSection() {
                     alignItems: 'center',
                 }}>
                 <TitleComponent title={t('title')}/>
-                <ButtonComponent text={t('button')} href={'/FrontEndLaba2/search'}/>
+                <ButtonComponent text={t('button')} href={'/frontendlaba2/search'}/>
             </Container>
         </Paper>
     );

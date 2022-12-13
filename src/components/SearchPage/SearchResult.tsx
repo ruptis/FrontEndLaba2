@@ -24,7 +24,7 @@ export function SearchResult(props: SearchResultProps) {
                 {props.director.name}
             </Typography>
             <Divider orientation="vertical" flexItem sx={{height: '100%', backgroundColor: 'primary.contrastText', marginRight: '10px'}}/>
-            <IconButton href={'/FrontEndLaba2/director/' + props.director.pathUrl}
+            <IconButton href={'/frontendlaba2/director/' + props.director.pathUrl}
                 sx={{
                     width: '100px',
                     height: '100px',

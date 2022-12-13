@@ -136,7 +136,7 @@ export function DirectorComponent(props: DirectorComponentProps) {
                     width: '100%',
                     height: '100%',
                 }}>
-                    <IconButton href={'/FrontEndLaba2/director/' + getPreviousDirector().pathUrl}
+                    <IconButton href={'/frontendlaba2/director/' + getPreviousDirector().pathUrl}
                         sx={{
                             width: '100px',
                             height: '100px',
@@ -155,7 +155,7 @@ export function DirectorComponent(props: DirectorComponentProps) {
                             }
                         }/>
                     </IconButton>
-                    <IconButton href={'/FrontEndLaba2/director/' + getNextDirector().pathUrl}
+                    <IconButton href={'/frontendlaba2/director/' + getNextDirector().pathUrl}
                         sx={{
                             width: '100px',
                             height: '100px',
