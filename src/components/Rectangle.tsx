@@ -12,8 +12,10 @@ interface PromoSectionProps {
     justify?: 'center' | 'start' | 'end' | 'space-between' | 'space-around';
     margin?: string;
     padding?: string;
+    minHeight?: string;
+    style?: any;
 }
-export function Rectangle({children, color, width, height, blur = false, direction = 'column', align = 'center', justify = 'center', margin = '0px', padding = '0px'}: PromoSectionProps) {
+export function Rectangle({children, color, width, height, blur = false, direction = 'column', align = 'center', justify = 'center', margin = '0px', padding = '0px', minHeight = 'auto', style}: PromoSectionProps) {
     const theme = useTheme();
     return (
         <Paper
@@ -21,6 +23,7 @@ export function Rectangle({children, color, width, height, blur = false, directi
                 backgroundColor: color,
                 height: height,
                 width: { lg: width, sm: '90vw', xs: '90vw' },
+                minHeight: minHeight,
                 display: 'flex',
                 flexDirection: direction === 'row-column' ? 'row' : direction,
                 alignItems: align,
@@ -36,13 +39,14 @@ export function Rectangle({children, color, width, height, blur = false, directi
                 WebkitBackdropFilter: blur ? `blur(10px)` : `none`,
                 [theme.breakpoints.down('md')]: {
                     flexDirection: direction === 'row-column' ? 'column' : direction,
-                    height: 'auto',
+                    height: minHeight === 'auto' ? 'auto' : minHeight,
                 },
                 [theme.breakpoints.down('sm')]: {
                     flexDirection: direction === 'row-column' ? 'column' : direction,
-                    height: 'auto',
+                    height: minHeight === 'auto' ? 'auto' : minHeight,
                     padding: '30px 0px',
-                }
+                },
+                ...style,
             }}>
             {children}
         </Paper>

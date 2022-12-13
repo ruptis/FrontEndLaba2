@@ -40,7 +40,6 @@ export const directors: IDirector[] = [
         mainImage: mainImage1,
         images: [
             image1,
-            mainImage1,
         ],
         videoEmbedId: '64f6ZYG9_Cw',
         location: {

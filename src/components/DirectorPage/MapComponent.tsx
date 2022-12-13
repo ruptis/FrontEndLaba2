@@ -1,28 +1,28 @@
+import { MapContainer, TileLayer } from 'react-leaflet'
+import {Rectangle} from "../Rectangle";
+import { MapContainer, TileLayer } from 'react-leaflet'
 
-import { MapContainer, TileLayer, useMap } from 'react-leaflet'
-
-    
-function MyComponent() {
-  const map = useMap()
-  console.log('map center:', map.getCenter())
-  return null
+interface MapComponentProps {
+    lat: number;
+    lng: number;
 }
 
-function MapComponent(props : any) {
+function MapComponent(props : MapComponentProps) {
   let mapSize =
   {
-    width: props.width+'px',
-    height: props.height+'px'
+      width: '100%',
+      height: '100%',
+      borderRadius: '30px',
   }
-
   return (
-    <MapContainer style={mapSize} center={[props.x, props.y]} zoom={10}>
-      <MyComponent />
-      <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-    </MapContainer>
+      <Rectangle blur={false} width={'1300px'} height={'860px'} padding={'35px'} margin={'50px'} minHeight={'500px'} color={'neutral.contrastText'}>
+        <MapContainer style={mapSize} center={[props.lat, props.lng]} zoom={13}>
+          <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+        </MapContainer>
+      </Rectangle>
   )
 }
 

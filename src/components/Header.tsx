@@ -18,7 +18,6 @@ import {useTranslation} from "react-i18next";
 import {ButtonGroup} from "@mui/material";
 
 const drawerWidth = 240;
-// const navItems = ['Главная', 'Инфо', 'Автор дня', 'Поиск'];
 const navItems = ['home', 'info', 'author', 'search'];
 const navLinks = ['/frontendlaba2/', '/frontendlaba2/#info', '/frontendlaba2/#author', '/frontendlaba2/search'];
 
