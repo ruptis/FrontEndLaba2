@@ -1,6 +1,12 @@
 
-import {Box, Button} from "@mui/material";
+import {Box, Button, ButtonBase, Icon, Link} from "@mui/material";
 import author from '../assets/images/Author.png'
+import GitHubIcon from '@mui/icons-material/GitHub';
+import IconButton from '@mui/material/IconButton';
+import { styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+
+const fontStyle = "Playfair Display";
 
 export default function Footer()
 {
@@ -16,13 +22,13 @@ export default function Footer()
     return (
     <Box sx={ BoxStyle }>
         <div style={{position: 'relative', top:'93px'}}>
-            <FooterButtons text='Перейти к поиску' posx='609'/>
-            <FooterButtons text='Перейти к главной' posx='1017'/>
+            <FooterButtons text='Перейти к поиску' posx='609' href='/FrontEndLaba2/search'/>
+            <FooterButtons text='Перейти к главной' posx='1017' href='/FrontEndLaba2/'/>
         </div>
         <div style={{position: 'relative', top:'257px'}}>
-            <Authorinfo posx='330' name='Патиюк Павел'/>
-            <Authorinfo posx='834' name='Климович Андрей'/>
-            <Authorinfo posx='1338' name='Барилко Михаил'/>
+            <Authorinfo posx='330' name='Патиюк Павел' href='https://github.com/ruptis'/>
+            <Authorinfo posx='834' name='Климович Андрей' href='https://github.com/AndreKlim1'/>
+            <Authorinfo posx='1338' name='Барилко Михаил' href='https://github.com/Nikmoofte'/>
         </div>
     </Box>);
 }
@@ -33,27 +39,46 @@ function Authorinfo(props: any)
     {
         position: 'absolute',
         left: props.posx + 'px',
-        down: '100px',
         width: '250px',
         height: '400px',
-    };
-    const TextStyle =
-    {
-        font: "Playfair Display", 
+        font: fontStyle, 
         fontWeight: "bolder",
         fontSize: '1.2em',
         textAling: 'center'
-    }
+    };
 
     return (
     <Box sx={ BoxStyle }>
-        <img src={author}></img>
-        <span style={TextStyle}>{props.name}</span>
+        <img src={author}   />
+        {props.name}
+ 
+        <IconButton color="secondary" aria-label='To git' href={props.href} >
+            <GitHubIcon sx={{fontSize: '100px'}} />
+        </IconButton>
+        
     </Box>
     )
 }
 
 function FooterButtons(props: any)
 {
-    return <Button sx={{position: 'absolute', left: props.posx + 'px'}}>{props.text}</Button>
+    const MyButton = styled(ButtonBase)(props, ({ theme }) => ({
+        position: "relative",
+        left: props.posx + 'px',
+        font: fontStyle, 
+        fontWeight: "bolder",
+        fontSize: '1.2em',
+        [theme.breakpoints.down("sm")]: 
+        {   
+            width: "100% !important", // Overrides inline-style
+            height: 100
+        },
+        "&:hover, &.Mui-focusVisible": 
+        {
+            fontWeight: "bolder",
+            textDecoration: 'underline'
+        }
+    }));
+    return <MyButton><Link href={props.href}>{props.text}</Link>
+    </MyButton>
 }
