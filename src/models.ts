@@ -1,4 +1,4 @@
-export interface IAuthor {
+export interface IDirector {
     name: string;
     birthDate: string;
     deathDate: string;
@@ -12,7 +12,9 @@ export interface IAuthor {
         lng: number;
     };
     timeline: ITimeline[];
+    pathUrl: string;
 }
+export default IDirector;
 
 export interface ITimeline {
     year: number;

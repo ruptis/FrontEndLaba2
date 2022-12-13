@@ -1,13 +1,15 @@
-import AboutImage from "../../assets/images/aboutImage.png"
+import AboutImage from "../../../assets/images/aboutImage.png"
 import {AboutComponent} from "./AboutComponent";
 import {useTheme} from "@mui/material";
 import Box from "@mui/material/Box";
+import {useTranslation} from "react-i18next";
 
 export function AboutSection() {
         const theme = useTheme();
+        const { t } = useTranslation('about');
 
         return (
-            <Box
+            <Box id={"info"}
                 sx={{
                     display: 'flex',
                     flexDirection: 'row',
@@ -37,7 +39,7 @@ export function AboutSection() {
                                 objectFit: 'cover',
                             }}/>
                 </Box>
-                <AboutComponent text="Какой-то текст" title="Информация о портале"/>
+                <AboutComponent title={t('title')} text={t('text')} />
             </Box>
         );
 }

@@ -21,13 +21,13 @@ export function Rectangle({children, color, width, height, blur = false, directi
             sx={{
                 backgroundColor: color,
                 height: height,
-                width: { lg: width, sm: '90vw'},
+                width: { lg: width, sm: '90vw', xs: '90vw' },
                 display: 'flex',
                 flexDirection: direction === 'row-column' ? 'row' : direction,
                 alignItems: align,
                 justifyContent: justify,
                 boxSizing: 'border-box',
-                borderRadius: { lg: '66px', md: '50px', sm: '30px'},
+                borderRadius: { lg: '66px', md: '50px', sm: '30px', xs: '30px' },
                 boxShadow: '0px 3px 12px rgba(0, 0, 0, 0.12)',
                 border: '1px solid rgba(255, 255, 255, 0.12)',
                 margin: margin,
@@ -38,6 +38,11 @@ export function Rectangle({children, color, width, height, blur = false, directi
                 [theme.breakpoints.down('md')]: {
                     flexDirection: direction === 'row-column' ? 'column' : direction,
                 },
+                [theme.breakpoints.down('sm')]: {
+                    flexDirection: direction === 'row-column' ? 'column' : direction,
+                    height: 'auto',
+                    padding: '30px 0px',
+                }
             }}>
             {children}
         </Paper>

@@ -1,6 +1,7 @@
-import {Rectangle} from "../Rectangle";
+import {Rectangle} from "../../Rectangle";
 import {Typography, useTheme} from "@mui/material";
-import MovieDivider from "../MovieDivider";
+import MovieDivider from "../../MovieDivider";
+import {Trans} from "react-i18next";
 
 interface AboutComponentProps {
     title: string;
@@ -20,17 +21,18 @@ export function AboutComponent(props: AboutComponentProps) {
                 color: 'primary.contrastText',
                 marginTop: '50px',
             }}>
-                {props.title}
+                <Trans>{props.title}</Trans>
             </Typography>
             <MovieDivider/>
             <Typography
                 sx={{
-                fontSize: '24px',
-                fontWeight: 'bold',
-                color: 'primary.contrastText',
-                textAlign: 'left',
+                    margin: '0px 40px',
+                    fontSize: '24px',
+                    fontWeight: 'bold',
+                    color: 'primary.contrastText',
+                    textAlign: 'left',
             }}>
-                {props.text}
+                <Trans>{props.text}</Trans>
             </Typography>
         </Rectangle>
     );

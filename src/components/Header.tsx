@@ -13,16 +13,49 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import {useState} from "react";
 
+import '../i18n';
+import {useTranslation} from "react-i18next";
+import {ButtonGroup} from "@mui/material";
+
 const drawerWidth = 240;
-const navItems = ['Главная', 'Инфо', 'Автор дня', 'Поиск'];
+// const navItems = ['Главная', 'Инфо', 'Автор дня', 'Поиск'];
+const navItems = ['home', 'info', 'author', 'search'];
+const navLinks = ['/FrontEndLaba2/', '/FrontEndLaba2/#info', '/FrontEndLaba2/#author', '/FrontEndLaba2/search'];
 
 export default function DrawerAppBar(props: any) {
+    const { t, i18n } = useTranslation('header')
+    const [language, setLanguage] = useState<string>('ru');
     const {window} = props;
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
+    const buttonGroup = (
+        <ButtonGroup variant="text" color="primary" aria-label="text primary button group" sx={{marginLeft: '10px', mx: 1}}>
+            <Button onClick={() => changeLanguage('ru')}
+                    sx={
+                        {
+                            color: 'primary.contrastText',
+                            backgroundColor: language === 'ru' ? 'primary.dark' : 'primary.main',
+                            '&:hover': {
+                                backgroundColor: language === 'ru' ? 'primary.dark' : 'primary.light',
+                            }
+                        }
+                    }>РУ</Button>
+            <Button onClick={() => changeLanguage('en')}
+                    sx={
+                        {
+                            color: 'primary.contrastText',
+                            backgroundColor: language === 'en' ? 'primary.dark' : 'primary.main',
+                            '&:hover': {
+                                backgroundColor: language === 'en' ? 'primary.dark' : 'primary.light',
+                            }
+                        }
+                    }>EN</Button>
+        </ButtonGroup>
+    );
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{textAlign: 'center'}}>
@@ -33,16 +66,22 @@ export default function DrawerAppBar(props: any) {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{textAlign: 'center'}}>
-                            <ListItemText primary={item}/>
+                        <ListItemButton sx={{textAlign: 'center'}} href={navLinks[navItems.indexOf(item)]}>
+                            <ListItemText primary={t(item)}/>
                         </ListItemButton>
                     </ListItem>
                 ))}
+                {buttonGroup}
             </List>
         </Box>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
+
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+        setLanguage(lng);
+    }
 
     return (
         <Box sx={{display: 'flex'}}>
@@ -66,10 +105,11 @@ export default function DrawerAppBar(props: any) {
                     </Typography>
                     <Box sx={{display: {xs: 'none', sm: 'block'}}}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{color: '#fff'}}>
-                                {item}
-                            </Button>
+                        <Button key={item} sx={{color: 'primary.contrastText', mx: 1}} href={navLinks[navItems.indexOf(item)]}>
+                            {t(item)}
+                        </Button>
                         ))}
+                        {buttonGroup}
                     </Box>
                 </Toolbar>
             </AppBar>

@@ -5,6 +5,9 @@ import MainPage from "./pages/MainPage";
 import Header from "./components/Header";
 import theme from "./theme";
 import Footer from './components/Footer';
+import SearchPage from "./pages/SearchPage";
+import DirectorPage from "./pages/DirectorPage";
+import directors from "./assets/data/directors";
 
 function App() {
   return (
@@ -14,6 +17,8 @@ function App() {
             <Header />
             <Routes>
                 <Route path="FrontEndLaba2/" element={<MainPage />} />
+                <Route path="FrontEndLaba2/search" element={<SearchPage />} />
+                {directors.map(director => <Route path={`FrontEndLaba2/director/${director.pathUrl}`} element={<DirectorPage director={director} />} />)}
             </Routes>
             <Footer />
           </ThemeProvider>

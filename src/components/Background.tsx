@@ -11,7 +11,7 @@ export function Background(props: BackgroundProps) {
             sx={{
                 backgroundImage: `url(${props.background})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'start',
                 backgroundRepeat: 'no-repeat',
                 display: 'flex',
                 flexDirection: 'column',
