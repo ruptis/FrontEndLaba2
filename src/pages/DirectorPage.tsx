@@ -4,6 +4,7 @@ import DirectorComponent from "../components/DirectorPage/DirectorComponent";
 import IDirector from "../models";
 import MapComponent from "../components/DirectorPage/MapComponent";
 import TimelineComponent from "../components/DirectorPage/TimelineComponent";
+import CarouselComponent from "../components/DirectorPage/CarouselComponent";
 
 interface DirectorPageProps {
     director: IDirector;
@@ -12,8 +13,9 @@ export function DirectorPage(props: DirectorPageProps) {
     return (
         <Background background={background}>
             <DirectorComponent director={props.director}/>
-            <MapComponent width ='1080' height = '768' x='53.7169' y='27.9776'/>
             <TimelineComponent timeline={props.director.timeline}/>
+            <CarouselComponent images={props.director.images}/>
+            <MapComponent lat={props.director.location.lat} lng={props.director.location.lng}/>
         </Background>
     );
 }
