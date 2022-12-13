@@ -29,6 +29,8 @@
     "react-swipeable-views": "^0.14.0",
     "react-swipeable-views-utils": "^0.14.0",
     "react-text": "^3.2.5",
+    "react-video": "^1.5.3",
+    "react-youtube": "^10.1.0",
     "typescript": "^4.9.3",
     "web-vitals": "^2.1.4"
   },

@@ -1,10 +1,12 @@
 import { MapContainer, TileLayer } from 'react-leaflet'
 import {Rectangle} from "../Rectangle";
+import { MapContainer, TileLayer } from 'react-leaflet'
 
 interface MapComponentProps {
     lat: number;
     lng: number;
 }
+
 function MapComponent(props : MapComponentProps) {
   let mapSize =
   {
