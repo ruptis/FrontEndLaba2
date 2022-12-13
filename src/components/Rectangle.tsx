@@ -12,7 +12,6 @@ interface PromoSectionProps {
     justify?: 'center' | 'start' | 'end' | 'space-between' | 'space-around';
     margin?: string;
     padding?: string;
-
 }
 export function Rectangle({children, color, width, height, blur = false, direction = 'column', align = 'center', justify = 'center', margin = '0px', padding = '0px'}: PromoSectionProps) {
     const theme = useTheme();
@@ -37,6 +36,7 @@ export function Rectangle({children, color, width, height, blur = false, directi
                 WebkitBackdropFilter: blur ? `blur(10px)` : `none`,
                 [theme.breakpoints.down('md')]: {
                     flexDirection: direction === 'row-column' ? 'column' : direction,
+                    height: 'auto',
                 },
                 [theme.breakpoints.down('sm')]: {
                     flexDirection: direction === 'row-column' ? 'column' : direction,

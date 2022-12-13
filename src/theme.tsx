@@ -20,8 +20,8 @@ const theme = createTheme({
             paper: `rgba(131, 80, 79, 0.9)`,
         },
         neutral: {
-            main: `#EFBBBE`,
-            contrastText: `#240E0D`,
+            main: `rgba(239, 187, 190, 0.95)`,
+            contrastText: `rgba(36, 14, 13, 0.95)`,
         }
     },
     typography: {
