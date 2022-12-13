@@ -1,4 +1,3 @@
-import Footer from "../components/Footer";
 import PromoSection from "../components/PromoSection/PromoSection";
 import QuoteSection from "../components/QuoteSection/QuoteSection";
 import {Background} from "../components/Background";

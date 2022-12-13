@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router";
 import MainPage from "./pages/MainPage";
 import Header from "./components/Header";
 import theme from "./theme";
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Routes>
                 <Route path="FrontEndLaba2/" element={<MainPage />} />
             </Routes>
+            <Footer />
           </ThemeProvider>
       </>
   );
