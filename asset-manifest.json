@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/frontendlaba2/static/css/main.e6c13ad2.css",
-    "main.js": "/frontendlaba2/static/js/main.909010b2.js",
+    "main.js": "/frontendlaba2/static/js/main.d6a2ea8f.js",
     "static/media/mainKorsh.jpg": "/frontendlaba2/static/media/mainKorsh.a099ee3935174bbdc9ab.jpg",
     "static/media/mainLukashevich.jpg": "/frontendlaba2/static/media/mainLukashevich.452b96e02c5cdd02e3e5.jpg",
     "static/media/promoBackground.svg": "/frontendlaba2/static/media/promoBackground.5685084a914af13cf953431ece23b91e.svg",
@@ -26,10 +26,10 @@
     "static/media/mainMelehovec.jpg": "/frontendlaba2/static/media/mainMelehovec.20fb62011f26d82dc2ac.jpg",
     "index.html": "/frontendlaba2/index.html",
     "main.e6c13ad2.css.map": "/frontendlaba2/static/css/main.e6c13ad2.css.map",
-    "main.909010b2.js.map": "/frontendlaba2/static/js/main.909010b2.js.map"
+    "main.d6a2ea8f.js.map": "/frontendlaba2/static/js/main.d6a2ea8f.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.909010b2.js"
+    "static/js/main.d6a2ea8f.js"
   ]
 }
